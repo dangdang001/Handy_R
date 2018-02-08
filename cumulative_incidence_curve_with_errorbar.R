@@ -2,10 +2,11 @@
 
 # Project: MU prediction
 
-# Objective: 1. Drawing cumulative incidence curve for smoking vs non-smoking vs overall  
-#            2. Cumulative incidence table by year
+# Objective: 1. Drawing cumulative incidence curve for smoking vs non-smoking vs overall
+#            2. Add in error bars at year 1,2,5,8
+#            3. Ouput both Colored and Balck/White
 
-# Note: Modified based on Lizhou's code
+
 
 library(cmprsk)
 library(ggplot2)
