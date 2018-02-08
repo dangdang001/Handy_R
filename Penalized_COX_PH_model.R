@@ -1,4 +1,6 @@
-# 20171211: Use penalized cox proportional hazard model to predict patients' risk of developing Marginal Ulcer 
+# Date:     20171211
+# Project:  Marginal ulcers following bariatric surgery
+# Purpose:  Use penalized cox proportional hazard model to predict patients' risk of developing Marginal Ulcer 
 #           after bypass surgery
 
 
