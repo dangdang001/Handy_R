@@ -1,6 +1,9 @@
-# Calculate the distance between two places based on the LATTITUDE/LONGITUDE data
+# Calculate the distance between two places based on their zipcodes
 
-# Here we take the distance between patients home and the facilities they went for example
+# SUPPOSE LONGITUDE AND LATTITUDE FOR EACH ZIP WERE ALREDAY MERGED
+
+
+# In this example, we calculate the distance between patients home and the facilities they went
 
 
 install.packages("Imap")
@@ -9,9 +12,9 @@ library(Imap)
 options(scipen=999) ######### Not use scientific format ######
 
 
-directory="Z:/Donglei/20151214-Breast Readmission SPARCS Gabe/";   ######## THE FOLDER WHERE THE ZIP FILE WAS STORED #####
+dir="Z:/Donglei/20151214-Breast Readmission SPARCS Gabe/";   ######## THE FOLDER WHERE THE ZIP FILE WAS STORED #####
 
-zip=read.csv(paste(directory,"twozips.csv",sep=""))   ##### FILE FROM DATA, INCLUDING NEWUPID, ZIP CODE FOR HOME, ZIP CODE FOR FACILITY, LONGITUDE AND LATTITUDE FOR EACH ZIP WERE ALREDAY MERGED IN SAS ######
+zip=read.csv(paste(dir,"twozips.csv",sep=""))   ##### FILE FROM DATA, INCLUDING NEWUPID, ZIP CODE FOR HOME, ZIP CODE FOR FACILITY, LONGITUDE AND LATTITUDE FOR EACH ZIP WERE ALREDAY MERGED IN SAS ######
 
 ############## MATCH UP ZIPCODE AND LATITUDE/LONGITUDE ################
 
