@@ -1,6 +1,6 @@
 # Date: 01/25/2018
 
-# Project: MU prediction
+# Project: Marginal ulcers following bariatric surgery
 
 # Objective: 1. Drawing cumulative incidence curve for smoking vs non-smoking vs overall
 #            2. Add in error bars at year 1,2,5,8
