@@ -1,5 +1,12 @@
-# 2016/09/14 all patients data were used instead of the 31 common patients information
+# Evaluating the performances of brain imaging measures, 2016.06
 
+# Penalized logistic regression models and Random Forest were applied to separate Multiple Sclerosis(MS) 
+# from Health Control(HC) patients using three different brain imaging measures (SUV, CBF and MRGlu). 
+
+# Repeated (# of repetition=10) 4-fold cross-validation methods were used to evaluate predictive accuracy of different models 
+# such as AUC, sensitivity, specificity, positive predictive value (PPV) and negative predictive value (NPV).
+
+# Grid search was applied to tune model parameters
 
 install.packages("glmnet")
 install.packages("caret")
@@ -70,10 +77,6 @@ Gender<-as.factor(patient.cbf.mrglu$Gender)
 factor <- model.matrix(patient.cbf.mrglu$Status ~ Gender)[,-1]  # necessary!
 
 cbf.mrglu.all<-data.frame(patient.cbf.mrglu[-c(2)],Gender=factor)[,c(1,12,2:11)]
-
-
-
-# 20160908: 10 times repeated k-fold cross validation:
 
 
 
