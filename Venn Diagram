@@ -1,0 +1,12 @@
+#install.packages("VennDiagram")
+library(VennDiagram)
+venn.plot<-venn.diagram(x = list(microarray.legacy=select.micro.legacy,
+                                 rnaseq.legacy=select.rnaseq.legacy,
+                                 rnaseq.count=select.rnaseq.count),
+                        filename = NULL, col = "black",
+                        fill = c("skyblue", "pink1", "mediumorchid"),
+                        margin=0.05, alpha = 0.6)
+
+png("././temp/venn_diagram_0.4_adj.png",height=6, width=8,units='in',res = 600)
+grid.draw(venn.plot);
+dev.off()
