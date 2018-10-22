@@ -1,7 +1,7 @@
 # Evaluating the performances of brain imaging measures, 2016.06
 
 # Penalized logistic regression models and Random Forest were applied to separate Multiple Sclerosis(MS) 
-# from Health Control(HC) patients using three different brain imaging measures (SUV, CBF and MRGlu). 
+# from Health Control(HC) patients using three different region-specific brain imaging measures (SUV, CBF and MRGlu) and their combinations. 
 
 # Repeated (# of repetition=10) 4-fold cross-validation methods were used to evaluate predictive accuracy of different models 
 # such as AUC, sensitivity, specificity, positive predictive value (PPV) and negative predictive value (NPV).
@@ -46,7 +46,7 @@ library(randomForest)
 
 #data preparation:
 
-#Categorical variables are usually first transformed into factors, then a dummy variable matrix of predictors is created and along with the continuous predictors, is passed to the model.
+#Categorical variables are first transformed into factors, then a dummy variable matrix of predictors is created and along with the continuous predictors, is passed to the model.
 
 Gender<-as.factor(patient.suv$Gender)
 
@@ -188,12 +188,6 @@ pl.cv<-function(d,k,p,print.detail)
         
         # print(auc[[i]]) 
         
-        # sum.auc=sum.auc+auc[[i]]
-        # sum.acc=sum.acc+accuracy[[i]]
-        # sum.sen=sum.sen+Sensitivity[[i]]
-        # sum.spe=sum.spe+Specificity[[i]]
-        # sum.ppv=sum.ppv+PPV[[i]]
-        # sum.npv=sum.npv+NPV[[i]]
         auc.matrix[m,i] <- auc[[i]]
         acc.matrix[m,i] <- accuracy[[i]]
         sen.matrix[m,i] <- Sensitivity[[i]]
@@ -211,12 +205,6 @@ pl.cv<-function(d,k,p,print.detail)
     }
     
     
-    # ave.auc<-sum.auc/(k*p)
-    # ave.acc<-sum.acc/(k*p)
-    # ave.sen<-sum.sen/(k*p)
-    # ave.spe<-sum.spe/(k*p)
-    # ave.ppv<-sum.ppv/(k*p)
-    # ave.npv<-sum.npv/(k*p)
     ave.auc<-mean(auc.matrix,na.rm=TRUE)
     ave.acc<-mean(acc.matrix,na.rm=TRUE)
     ave.sen<-mean(sen.matrix,na.rm=TRUE)
@@ -415,12 +403,7 @@ rf.cv<-function(d,k,p,print.detail)
         
         # print(auc[[i]]) 
         
-        # sum.auc=sum.auc+auc[[i]]
-        # sum.acc=sum.acc+accuracy[[i]]
-        # sum.sen=sum.sen+Sensitivity[[i]]
-        # sum.spe=sum.spe+Specificity[[i]]
-        # sum.ppv=sum.ppv+PPV[[i]]
-        # sum.npv=sum.npv+NPV[[i]]
+
         auc.matrix[m,i] <- auc[[i]]
         acc.matrix[m,i] <- accuracy[[i]]
         sen.matrix[m,i] <- Sensitivity[[i]]
@@ -439,12 +422,6 @@ rf.cv<-function(d,k,p,print.detail)
     }
     
     
-    # ave.auc<-sum.auc/(k*p)
-    # ave.acc<-sum.acc/(k*p)
-    # ave.sen<-sum.sen/(k*p)
-    # ave.spe<-sum.spe/(k*p)
-    # ave.ppv<-sum.ppv/(k*p)
-    # ave.npv<-sum.npv/(k*p)
     ave.auc<-mean(auc.matrix,na.rm=TRUE)
     ave.acc<-mean(acc.matrix,na.rm=TRUE)
     ave.sen<-mean(sen.matrix,na.rm=TRUE)
